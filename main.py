@@ -82,7 +82,7 @@ class MyRoot(BoxLayout):
                 # Disabling all the buttons.
                 for button in self.buttons_layout.buttons.values():
                     button.disabled = True
-                self.GAME_MSG = "You Won!!!"
+                self.GAME_MSG = "You Won!!!!"
 
     def configure_buttons(self):
 
