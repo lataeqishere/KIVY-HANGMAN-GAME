@@ -1,5 +1,5 @@
 import string
-
+import random
 import kivy
 
 from kivy.app import App
@@ -21,24 +21,30 @@ class ButtonsLayout(GridLayout):
 
         self.buttons = {}
 
-        # Creating the buttons.
         self.create_buttons()
 
     def create_buttons(self):
-        # Creating buttons for all the alphabets.
+        
         for alphabet in string.ascii_uppercase:
-            # Creating button.
+
             button = Button(
                 text=alphabet,
                 font_name="fonts/GeistMonoNerdFontMono-Bold.otf",
                 font_size=24)
 
-            self.add_widget(button)
+            self.add_widget(button) #26widget
 
             self.buttons[alphabet] = button
+
+class MyRoot(BoxLayout):
+    def __init__(self, **kwargs):
+        super(MyRoot, self).__init__(**kwargs)
+
+        self.buttons_layout = ButtonsLayout
+
 class Hangman(App):
     def build(self):
-        return ButtonsLayout()
+        return MyRoot()
 
 if __name__ == "__main__":
     Hangman().run()
