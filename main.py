@@ -8,6 +8,8 @@ from kivy.properties import StringProperty
 from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
 
+from words import Words
+
 class ButtonsLayout(GridLayout):
     instance = []
 
@@ -36,9 +38,37 @@ class ButtonsLayout(GridLayout):
 
             self.buttons[alphabet] = button
 class MyRoot(BoxLayout):
+    WORD_DISPLAY = StringProperty()
+
     def __init__(self, **kwargs):
         super(MyRoot, self).__init__(**kwargs)
-        self.buttons_layout = ButtonsLayout
+                
+        self.RANDOM_WORD = ""
+
+        self.GUESSES = []
+
+        self.buttons_layout = ButtonsLayout.instance[0]
+
+        self.start_game()
+
+    @property
+    def update_word_display(self):
+
+        WORD_DISPLAY = []
+        for alphabet in self.RANDOM_WORD:
+            if alphabet in self.GUESSES:
+                WORD_DISPLAY.append(alphabet)
+            else:
+                WORD_DISPLAY.append("_")
+
+        self.WORD_DISPLAY = " ".join(WORD_DISPLAY)
+
+    def start_game(self):
+
+        self.RANDOM_WORD = random.choice(Words)
+
+        self.WORD_DISPLAY = " ".join(["_" for _ in self.RANDOM_WORD])
+
 class Hangman(App):
     def build(self):
         return MyRoot()
