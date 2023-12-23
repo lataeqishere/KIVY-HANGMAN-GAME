@@ -39,6 +39,7 @@ class ButtonsLayout(GridLayout):
             self.buttons[alphabet] = button
 class MyRoot(BoxLayout):
     WORD_DISPLAY = StringProperty()
+    GAME_MSG = StringProperty()
 
     def __init__(self, **kwargs):
         super(MyRoot, self).__init__(**kwargs)
@@ -81,6 +82,7 @@ class MyRoot(BoxLayout):
                 # Disabling all the buttons.
                 for button in self.buttons_layout.buttons.values():
                     button.disabled = True
+                self.GAME_MSG = "You Won!!!"
 
     def configure_buttons(self):
 
