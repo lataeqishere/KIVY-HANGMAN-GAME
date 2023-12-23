@@ -35,13 +35,11 @@ class ButtonsLayout(GridLayout):
             self.add_widget(button) #26widget
 
             self.buttons[alphabet] = button
-
 class MyRoot(BoxLayout):
     def __init__(self, **kwargs):
         super(MyRoot, self).__init__(**kwargs)
-
         self.buttons_layout = ButtonsLayout
-
+        
 class Hangman(App):
     def build(self):
         return MyRoot()
