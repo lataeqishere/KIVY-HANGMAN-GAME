@@ -93,6 +93,8 @@ class MyRoot(BoxLayout):
 
         self.RANDOM_WORD = random.choice(Words)
 
+        self.GAME_MSG = "Guess the word"
+
         self.WORD_DISPLAY = " ".join(["_" for _ in self.RANDOM_WORD])
     
 class Hangman(App):
