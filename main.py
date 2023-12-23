@@ -69,12 +69,18 @@ class MyRoot(BoxLayout):
         self.WORD_DISPLAY = " ".join(WORD_DISPLAY)
 
     def btn_press(self, widget):
+        widget.disabled = True
 
         self.GUESSES.append(widget.text)
 
         if widget.text in self.RANDOM_WORD:
 
             self.update_word_display()
+
+            if self.won:
+                # Disabling all the buttons.
+                for button in self.buttons_layout.buttons.values():
+                    button.disabled = True
 
     def configure_buttons(self):
 
@@ -86,6 +92,7 @@ class MyRoot(BoxLayout):
         self.RANDOM_WORD = random.choice(Words)
 
         self.WORD_DISPLAY = " ".join(["_" for _ in self.RANDOM_WORD])
+    
 class Hangman(App):
     def build(self):
         return MyRoot()
