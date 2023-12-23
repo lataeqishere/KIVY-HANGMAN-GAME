@@ -49,9 +49,14 @@ class MyRoot(BoxLayout):
 
         self.buttons_layout = ButtonsLayout.instance[0]
 
+        self.configure_buttons()
+
         self.start_game()
 
     @property
+    def won(self):
+        return all(alphabet in self.GUESSES for alphabet in self.RANDOM_WORD)
+    
     def update_word_display(self):
 
         WORD_DISPLAY = []
@@ -63,12 +68,24 @@ class MyRoot(BoxLayout):
 
         self.WORD_DISPLAY = " ".join(WORD_DISPLAY)
 
+    def btn_press(self, widget):
+
+        self.GUESSES.append(widget.text)
+
+        if widget.text in self.RANDOM_WORD:
+
+            self.update_word_display()
+
+    def configure_buttons(self):
+
+        for button in self.buttons_layout.buttons.values():
+            button.on_press = lambda btn=button: self.btn_press(btn)
+
     def start_game(self):
 
         self.RANDOM_WORD = random.choice(Words)
 
         self.WORD_DISPLAY = " ".join(["_" for _ in self.RANDOM_WORD])
-
 class Hangman(App):
     def build(self):
         return MyRoot()
