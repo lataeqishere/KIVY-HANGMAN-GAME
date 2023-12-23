@@ -28,15 +28,14 @@ class ButtonsLayout(GridLayout):
         # Creating buttons for all the alphabets.
         for alphabet in string.ascii_uppercase:
             # Creating button.
-            button = Button(text=alphabet)
+            button = Button(
+                text=alphabet,
+                font_name="fonts/GeistMonoNerdFontMono-Bold.otf",
+                font_size=24)
 
             self.add_widget(button)
 
             self.buttons[alphabet] = button
-
-class MyRoot(BoxLayout):
-    pass
-
 class Hangman(App):
     def build(self):
         return ButtonsLayout()
