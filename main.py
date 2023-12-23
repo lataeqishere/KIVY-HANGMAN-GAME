@@ -34,9 +34,6 @@ class ButtonsLayout(GridLayout):
 
             self.buttons[alphabet] = button
 
-class MyRoot(BoxLayout):
-    pass
-
 class Hangman(App):
     def build(self):
         return ButtonsLayout()
