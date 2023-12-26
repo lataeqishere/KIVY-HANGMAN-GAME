@@ -1,1 +1,10 @@
-Words = ['HAPPY', 'CANDY', 'SUNSHINE', 'FRIEND', 'PLAYFUL']
+Words = ['HAPPY', 'CANDY', 'SUNSHINE', 'FRIEND', 'PLAYFUL', "Apple", "Ball", "Cat", "Dog", "Elephant", "Frog", "Giraffe", "Hat", "Ice cream", "Jelly",
+    "Kite", "Lion", "Monkey", "Nose", "Orange", "Pizza", "Queen", "Rainbow", "Sun", "Turtle",
+    "Umbrella", "Volcano", "Watermelon", "Xylophone", "Yellow", "Zipper", "Butterfly", "Cupcake", "Dinosaur", "Egg",
+    "Fish", "Guitar", "Hippo", "Igloo", "Juice", "Kangaroo", "Lollipop", "Moon", "Nest", "Owl",
+    "Pencil", "Quack", "Robot", "Star", "Teddy bear", "Unicorn", "Vegetable", "Wagon", "X-ray", "Yo-yo",
+    "Zebra", "Candy", "Drum", "Firefly", "Grapes", "Hamburger", "Island", "Jigsaw", "Lemon", "Muffin",
+    "Nut", "Ocean", "Pancake", "Question", "Rocket", "Snail", "Train", "Under", "Vase", "Worm",
+    "Yawn", "Zip", "Castle", "Door", "Flower", "Globe", "Hat", "Igloo", "Jellyfish", "Key",
+    "Lamp", "Mouse", "Net", "Octopus", "Popcorn", "Quilt", "Raccoon", "Slide", "Tooth", "Udder",
+    "Vulture", "Wand", "Xerox", "Yodel", "Zigzag", "Camera", "Dolphin", "Elephant", "Fountain", "Guitar"]
