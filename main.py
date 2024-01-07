@@ -38,6 +38,7 @@ class ButtonsLayout(GridLayout):
 
             self.buttons[alphabet] = button
 class MyRoot(BoxLayout):
+    ERRORS = StringProperty()
     WORD_DISPLAY = StringProperty()
     GAME_MSG = StringProperty()
 
@@ -84,6 +85,10 @@ class MyRoot(BoxLayout):
                     button.disabled = True
                 self.GAME_MSG = "You Won!!!!"
 
+        else:
+            # Adding 1 to the ERRORS.
+            self.ERRORS = str(int(self.ERRORS) + 1)
+
     def configure_buttons(self):
 
         for button in self.buttons_layout.buttons.values():
@@ -92,6 +97,8 @@ class MyRoot(BoxLayout):
     def start_game(self):
 
         self.RANDOM_WORD = random.choice(Words)
+
+        self.ERRORS = "0"
 
         self.GAME_MSG = "Guess the word"
 
