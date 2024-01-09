@@ -86,8 +86,17 @@ class MyRoot(BoxLayout):
                 self.GAME_MSG = "You Won!!!!"
 
         else:
-            # Adding 1 to the ERRORS.
             self.ERRORS = str(int(self.ERRORS) + 1)
+
+            if int(self.ERRORS) == 7:
+                
+                for button in self.buttons_layout.buttons.values():
+                    button.disabled = True
+
+                self.GAME_MSG = "GAME OVER!!!"
+
+                
+                self.WORD_DISPLAY = self.RANDOM_WORD
 
     def configure_buttons(self):
 
