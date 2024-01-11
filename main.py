@@ -7,12 +7,13 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import StringProperty
 from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
+from kivy.core.audio import SoundLoader
+
 
 from words import Words
-
 class ButtonsLayout(GridLayout):
     instance = []
-
+    button_sound = SoundLoader.load('sound/button_sound.mp3')
     def __init__(self, **kwargs):
         super(ButtonsLayout, self).__init__(**kwargs)
 
@@ -33,10 +34,15 @@ class ButtonsLayout(GridLayout):
                 text=alphabet,
                 font_name="fonts/GeistMonoNerdFontMono-Bold.otf",
                 font_size=24)
-
+            
+            button.bind(on_press=self.on_button_press)
             self.add_widget(button) #26widget
 
             self.buttons[alphabet] = button
+
+    def on_button_press(self, instance):
+        # Play the button press sound
+        ButtonsLayout.button_sound.play()
 class MyRoot(BoxLayout):
     ERRORS = StringProperty()
     HANGMAN_IMG = StringProperty()
