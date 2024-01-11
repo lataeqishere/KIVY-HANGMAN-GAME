@@ -110,11 +110,18 @@ class MyRoot(BoxLayout):
 
         self.RANDOM_WORD = random.choice(Words)
 
+        self.GUESSES.clear()
+
         self.ERRORS = "0"
+
+        self.HANGMAN_IMG = "images/hangman0.png"
 
         self.GAME_MSG = "Guess the word"
 
         self.WORD_DISPLAY = " ".join(["_" for _ in self.RANDOM_WORD])
+
+        for button in self.buttons_layout.buttons.values():
+            button.disabled = False
     
 class Hangman(App):
     def build(self):
