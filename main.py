@@ -39,6 +39,7 @@ class ButtonsLayout(GridLayout):
             self.buttons[alphabet] = button
 class MyRoot(BoxLayout):
     ERRORS = StringProperty()
+    HANGMAN_IMG = StringProperty()
     WORD_DISPLAY = StringProperty()
     GAME_MSG = StringProperty()
 
@@ -87,6 +88,8 @@ class MyRoot(BoxLayout):
 
         else:
             self.ERRORS = str(int(self.ERRORS) + 1)
+
+            self.HANGMAN_IMG = "images/hangman" + self.ERRORS + ".png"
 
             if int(self.ERRORS) == 7:
                 
