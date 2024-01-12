@@ -1,11 +1,15 @@
 <MyRoot>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'images/white-paper-texture.jpg'
     orientation: "vertical"
-
     Label:
         text: "Hangman"
-        font_name: "fonts/GeistMonoNerdFontMono-Bold.otf"
-        font_size: 84
-        color: 0, 1, 0, 1
+        font_name: "fonts/Productive_Day.otf"
+        font_size: 75
+        color: 0, 0, 0, 1
 
     BoxLayout:
         size_hint: 1, 0.5
@@ -15,18 +19,54 @@
 
         Label:
             text: "ERRORS: " + root.ERRORS
-            font_name: "fonts/GeistMonoNerdFontMono-Bold.otf"
+            font_name: "fonts/Productive_Day.otf"
             font_size: 32
-            color: 0, 1, 0, 1
+            color: 0, 0, 0, 1
             size_hint: 0.5, 1
 
-        Button:
-            text: "Restart"
-            font_size: 24
-            font_name: "fonts/GeistMonoNerdFontMono-Bold.otf"
+        BoxLayout:
             size_hint: 0.25, 1
-            on_press: root.start_game()
-    
+            orientation: "vertical"
+            spacing: 10
+
+            Button:
+                text: "Restart"
+                font_size: 24
+                font_name: "fonts/Productive_Day.otf"
+                font_size: 32
+                size_hint: 1, None
+                height: 50
+                color: 0, 0, 0, 1
+                background_color: 0, 0, 0, 0
+                on_press: root.start_game()
+
+            Button:
+                text: "Settings"
+                font_size: 24
+                font_name: "fonts/Productive_Day.otf"
+                font_size: 32
+                size_hint: 1, None
+                height: 50
+                color: 0, 0, 0, 1
+                background_color: 0, 0, 0, 0
+                on_press: root.on_setting_button_press()
+
+            Label:
+                size_hint: 0.25, 1
+
+            Label:
+                size_hint: 0.25, 1
+
+            Button:
+                text: "Hint"
+                font_size: 24
+                font_name: "fonts/Productive_Day.otf"
+                font_size: 32
+                size_hint: 1, None
+                height: 50
+                color: 0, 0, 0, 1
+                background_color: 0, 0, 0, 0
+                on_press: root.show_hint()
     Image:
         source: root.HANGMAN_IMG
         size_hint: 1, 2
@@ -34,22 +74,22 @@
     Label:
         text: root.GAME_MSG
         size_hint: 1, 0.75
-        font_name: "fonts/GeistMonoNerdFontMono-Bold.otf"
+        font_name: "fonts/Productive_Day.otf"
         font_size: 32
-        color: 0, 1, 0, 1
+        color: 0, 0, 0, 1
         
     Label:
         text: root.WORD_DISPLAY
         size_hint: 1, 0.75
-        font_name: "fonts/GeistMonoNerdFontMono-Bold.otf"
+        font_name: "fonts/Productive_Day.otf"
         font_size: 32
-        color: 0, 1, 0, 1
+        color: 0, 0, 0, 1
 
     Label:
         text: "Available Letters"
         size_hint: 1, 0.75
-        font_name: "fonts/GeistMonoNerdFontMono-Bold.otf"
+        font_name: "fonts/Productive_Day.otf"
         font_size: 32
-        color: 0, 1, 0, 1
+        color: 0, 0, 0, 1
 
     ButtonsLayout:
