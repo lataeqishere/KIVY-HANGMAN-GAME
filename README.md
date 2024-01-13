@@ -21,13 +21,13 @@ This is a simple Hangman game implemented using the Kivy framework in Python. Th
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/DatboisouL/HANGMAN_KIVY.git
+    git clone https://github.com/DatboisouL/KIVY-HANGMAN-GAME.git
     ```
 
 2. **Navigate to the project directory:**
 
     ```bash
-    cd HANGMAN_KIVY
+    cd KIVY-HANGMAN-GAME
     ```
 
 3. **Install dependencies:**
