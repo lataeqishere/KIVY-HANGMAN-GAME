@@ -38,7 +38,7 @@ class ButtonsLayout(GridLayout):
         ButtonsLayout.instance.append(self)
 
         self.rows = 2
-        self.cols = 14
+        self.cols = 13
         self.buttons = {}
         self.create_buttons()
 
@@ -55,17 +55,6 @@ class ButtonsLayout(GridLayout):
             button.bind(on_press=self.on_button_press)
             self.add_widget(button)
             self.buttons[alphabet] = button
-
-        hint_button = Button(
-            text='Hint',
-            font_name="fonts/Productive_Day.otf",
-            font_size=24,
-            background_color=(0, 0, 0, 0),
-            color=(0, 0, 0, 1)
-        )
-        hint_button.bind(on_press=self.on_hint_button_press)
-        self.add_widget(hint_button)
-        self.buttons['Hint'] = hint_button
 
     #setting button press
     def on_setting_button_press(self, instance):
